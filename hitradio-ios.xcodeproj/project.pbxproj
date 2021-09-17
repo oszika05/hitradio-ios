@@ -13,6 +13,29 @@
 		2C094D0326F0F677003E20CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C094D0226F0F677003E20CE /* Preview Assets.xcassets */; };
 		2C094D0E26F0F677003E20CE /* hitradio_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D0D26F0F677003E20CE /* hitradio_iosTests.swift */; };
 		2C094D1926F0F678003E20CE /* hitradio_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D1826F0F678003E20CE /* hitradio_iosUITests.swift */; };
+		2C094D3826F46225003E20CE /* SourceUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D3626F46225003E20CE /* SourceUrl.swift */; };
+		2C094D3926F46225003E20CE /* StreamQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D3726F46225003E20CE /* StreamQuality.swift */; };
+		2C094D3E26F46237003E20CE /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D3A26F46237003E20CE /* Source.swift */; };
+		2C094D3F26F46237003E20CE /* ChanginMetadataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D3B26F46237003E20CE /* ChanginMetadataSource.swift */; };
+		2C094D4026F46237003E20CE /* MetadataObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D3C26F46237003E20CE /* MetadataObserver.swift */; };
+		2C094D4126F46237003E20CE /* SimpleSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D3D26F46237003E20CE /* SimpleSource.swift */; };
+		2C094D4426F46251003E20CE /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D4226F46251003E20CE /* AudioController.swift */; };
+		2C094D4526F46251003E20CE /* MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D4326F46251003E20CE /* MetaData.swift */; };
+		2C094D4826F46263003E20CE /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D4626F46263003E20CE /* AudioPlayer.swift */; };
+		2C094D4926F46263003E20CE /* AudioPlayingStateObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D4726F46263003E20CE /* AudioPlayingStateObserver.swift */; };
+		2C094D4B26F4628F003E20CE /* ProgramsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D4A26F4628F003E20CE /* ProgramsResult.swift */; };
+		2C094D4E26F4629B003E20CE /* CurrentProgramChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D4C26F4629B003E20CE /* CurrentProgramChanger.swift */; };
+		2C094D4F26F4629B003E20CE /* CurrentProgramObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D4D26F4629B003E20CE /* CurrentProgramObserver.swift */; };
+		2C094D5126F462A9003E20CE /* ProgramApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D5026F462A9003E20CE /* ProgramApi.swift */; };
+		2C094D5326F462B1003E20CE /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D5226F462B1003E20CE /* Program.swift */; };
+		2C094D5626F462E1003E20CE /* PodcastProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D5426F462E1003E20CE /* PodcastProgram.swift */; };
+		2C094D5726F462E1003E20CE /* PodcastItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D5526F462E1003E20CE /* PodcastItem.swift */; };
+		2C094D5A26F46314003E20CE /* PodcastApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D5926F46314003E20CE /* PodcastApi.swift */; };
+		2C094D5D26F46399003E20CE /* Audiotest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D5B26F46399003E20CE /* Audiotest.swift */; };
+		2C094D5E26F46399003E20CE /* AudiotestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D5C26F46399003E20CE /* AudiotestModel.swift */; };
+		2C094D6226F463C7003E20CE /* NowPlayingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D5F26F463C6003E20CE /* NowPlayingBar.swift */; };
+		2C094D6326F463C7003E20CE /* VolumeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D6026F463C7003E20CE /* VolumeSlider.swift */; };
+		2C094D6426F463C7003E20CE /* NowPlayingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C094D6126F463C7003E20CE /* NowPlayingPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +68,29 @@
 		2C094D1426F0F677003E20CE /* hitradio-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hitradio-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C094D1826F0F678003E20CE /* hitradio_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hitradio_iosUITests.swift; sourceTree = "<group>"; };
 		2C094D1A26F0F678003E20CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C094D3626F46225003E20CE /* SourceUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceUrl.swift; sourceTree = "<group>"; };
+		2C094D3726F46225003E20CE /* StreamQuality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamQuality.swift; sourceTree = "<group>"; };
+		2C094D3A26F46237003E20CE /* Source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
+		2C094D3B26F46237003E20CE /* ChanginMetadataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChanginMetadataSource.swift; sourceTree = "<group>"; };
+		2C094D3C26F46237003E20CE /* MetadataObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataObserver.swift; sourceTree = "<group>"; };
+		2C094D3D26F46237003E20CE /* SimpleSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleSource.swift; sourceTree = "<group>"; };
+		2C094D4226F46251003E20CE /* AudioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		2C094D4326F46251003E20CE /* MetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaData.swift; sourceTree = "<group>"; };
+		2C094D4626F46263003E20CE /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		2C094D4726F46263003E20CE /* AudioPlayingStateObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayingStateObserver.swift; sourceTree = "<group>"; };
+		2C094D4A26F4628F003E20CE /* ProgramsResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramsResult.swift; sourceTree = "<group>"; };
+		2C094D4C26F4629B003E20CE /* CurrentProgramChanger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentProgramChanger.swift; sourceTree = "<group>"; };
+		2C094D4D26F4629B003E20CE /* CurrentProgramObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentProgramObserver.swift; sourceTree = "<group>"; };
+		2C094D5026F462A9003E20CE /* ProgramApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramApi.swift; sourceTree = "<group>"; };
+		2C094D5226F462B1003E20CE /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
+		2C094D5426F462E1003E20CE /* PodcastProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastProgram.swift; sourceTree = "<group>"; };
+		2C094D5526F462E1003E20CE /* PodcastItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastItem.swift; sourceTree = "<group>"; };
+		2C094D5926F46314003E20CE /* PodcastApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastApi.swift; sourceTree = "<group>"; };
+		2C094D5B26F46399003E20CE /* Audiotest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audiotest.swift; sourceTree = "<group>"; };
+		2C094D5C26F46399003E20CE /* AudiotestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudiotestModel.swift; sourceTree = "<group>"; };
+		2C094D5F26F463C6003E20CE /* NowPlayingBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingBar.swift; sourceTree = "<group>"; };
+		2C094D6026F463C7003E20CE /* VolumeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeSlider.swift; sourceTree = "<group>"; };
+		2C094D6126F463C7003E20CE /* NowPlayingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +141,13 @@
 		2C094CFA26F0F676003E20CE /* hitradio-ios */ = {
 			isa = PBXGroup;
 			children = (
+				2C094D2926F0F6D4003E20CE /* audio */,
+				2C094D2626F0F6A8003E20CE /* model */,
+				2C094D2726F0F6AE003E20CE /* view */,
 				2C094CFB26F0F676003E20CE /* hitradio_iosApp.swift */,
 				2C094CFD26F0F676003E20CE /* ContentView.swift */,
+				2C094D5B26F46399003E20CE /* Audiotest.swift */,
+				2C094D5C26F46399003E20CE /* AudiotestModel.swift */,
 				2C094CFF26F0F677003E20CE /* Assets.xcassets */,
 				2C094D0426F0F677003E20CE /* Info.plist */,
 				2C094D0126F0F677003E20CE /* Preview Content */,
@@ -128,6 +179,144 @@
 				2C094D1A26F0F678003E20CE /* Info.plist */,
 			);
 			path = "hitradio-iosUITests";
+			sourceTree = "<group>";
+		};
+		2C094D2626F0F6A8003E20CE /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2C094D2C26F0F704003E20CE /* podcast */,
+				2C094D2B26F0F6FE003E20CE /* program */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		2C094D2726F0F6AE003E20CE /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2C094D3526F0F85E003E20CE /* nowplaying */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2C094D2926F0F6D4003E20CE /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				2C094D4626F46263003E20CE /* AudioPlayer.swift */,
+				2C094D4726F46263003E20CE /* AudioPlayingStateObserver.swift */,
+				2C094D2D26F0F742003E20CE /* metadata */,
+			);
+			path = audio;
+			sourceTree = "<group>";
+		};
+		2C094D2B26F0F6FE003E20CE /* program */ = {
+			isa = PBXGroup;
+			children = (
+				2C094D5226F462B1003E20CE /* Program.swift */,
+				2C094D3226F0F7D1003E20CE /* current */,
+				2C094D3126F0F7CB003E20CE /* repository */,
+				2C094D3026F0F7C7003E20CE /* api */,
+			);
+			path = program;
+			sourceTree = "<group>";
+		};
+		2C094D2C26F0F704003E20CE /* podcast */ = {
+			isa = PBXGroup;
+			children = (
+				2C094D5826F4630D003E20CE /* api */,
+				2C094D5526F462E1003E20CE /* PodcastItem.swift */,
+				2C094D5426F462E1003E20CE /* PodcastProgram.swift */,
+				2C094D3426F0F806003E20CE /* repository */,
+			);
+			path = podcast;
+			sourceTree = "<group>";
+		};
+		2C094D2D26F0F742003E20CE /* metadata */ = {
+			isa = PBXGroup;
+			children = (
+				2C094D4226F46251003E20CE /* AudioController.swift */,
+				2C094D4326F46251003E20CE /* MetaData.swift */,
+				2C094D2E26F0F76F003E20CE /* source */,
+			);
+			path = metadata;
+			sourceTree = "<group>";
+		};
+		2C094D2E26F0F76F003E20CE /* source */ = {
+			isa = PBXGroup;
+			children = (
+				2C094D3B26F46237003E20CE /* ChanginMetadataSource.swift */,
+				2C094D3C26F46237003E20CE /* MetadataObserver.swift */,
+				2C094D3D26F46237003E20CE /* SimpleSource.swift */,
+				2C094D3A26F46237003E20CE /* Source.swift */,
+				2C094D2F26F0F777003E20CE /* url */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		2C094D2F26F0F777003E20CE /* url */ = {
+			isa = PBXGroup;
+			children = (
+				2C094D3626F46225003E20CE /* SourceUrl.swift */,
+				2C094D3726F46225003E20CE /* StreamQuality.swift */,
+			);
+			path = url;
+			sourceTree = "<group>";
+		};
+		2C094D3026F0F7C7003E20CE /* api */ = {
+			isa = PBXGroup;
+			children = (
+				2C094D5026F462A9003E20CE /* ProgramApi.swift */,
+				2C094D3326F0F7ED003E20CE /* dto */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		2C094D3126F0F7CB003E20CE /* repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		2C094D3226F0F7D1003E20CE /* current */ = {
+			isa = PBXGroup;
+			children = (
+				2C094D4C26F4629B003E20CE /* CurrentProgramChanger.swift */,
+				2C094D4D26F4629B003E20CE /* CurrentProgramObserver.swift */,
+			);
+			path = current;
+			sourceTree = "<group>";
+		};
+		2C094D3326F0F7ED003E20CE /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				2C094D4A26F4628F003E20CE /* ProgramsResult.swift */,
+			);
+			path = dto;
+			sourceTree = "<group>";
+		};
+		2C094D3426F0F806003E20CE /* repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		2C094D3526F0F85E003E20CE /* nowplaying */ = {
+			isa = PBXGroup;
+			children = (
+				2C094D5F26F463C6003E20CE /* NowPlayingBar.swift */,
+				2C094D6126F463C7003E20CE /* NowPlayingPage.swift */,
+				2C094D6026F463C7003E20CE /* VolumeSlider.swift */,
+			);
+			path = nowplaying;
+			sourceTree = "<group>";
+		};
+		2C094D5826F4630D003E20CE /* api */ = {
+			isa = PBXGroup;
+			children = (
+				2C094D5926F46314003E20CE /* PodcastApi.swift */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +448,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C094D4126F46237003E20CE /* SimpleSource.swift in Sources */,
+				2C094D4426F46251003E20CE /* AudioController.swift in Sources */,
+				2C094D4826F46263003E20CE /* AudioPlayer.swift in Sources */,
+				2C094D3F26F46237003E20CE /* ChanginMetadataSource.swift in Sources */,
+				2C094D6426F463C7003E20CE /* NowPlayingPage.swift in Sources */,
+				2C094D4026F46237003E20CE /* MetadataObserver.swift in Sources */,
+				2C094D5626F462E1003E20CE /* PodcastProgram.swift in Sources */,
+				2C094D4526F46251003E20CE /* MetaData.swift in Sources */,
+				2C094D6226F463C7003E20CE /* NowPlayingBar.swift in Sources */,
+				2C094D6326F463C7003E20CE /* VolumeSlider.swift in Sources */,
+				2C094D4B26F4628F003E20CE /* ProgramsResult.swift in Sources */,
+				2C094D5726F462E1003E20CE /* PodcastItem.swift in Sources */,
+				2C094D5326F462B1003E20CE /* Program.swift in Sources */,
+				2C094D3826F46225003E20CE /* SourceUrl.swift in Sources */,
 				2C094CFE26F0F676003E20CE /* ContentView.swift in Sources */,
 				2C094CFC26F0F676003E20CE /* hitradio_iosApp.swift in Sources */,
+				2C094D5D26F46399003E20CE /* Audiotest.swift in Sources */,
+				2C094D4926F46263003E20CE /* AudioPlayingStateObserver.swift in Sources */,
+				2C094D3E26F46237003E20CE /* Source.swift in Sources */,
+				2C094D5E26F46399003E20CE /* AudiotestModel.swift in Sources */,
+				2C094D5A26F46314003E20CE /* PodcastApi.swift in Sources */,
+				2C094D3926F46225003E20CE /* StreamQuality.swift in Sources */,
+				2C094D5126F462A9003E20CE /* ProgramApi.swift in Sources */,
+				2C094D4F26F4629B003E20CE /* CurrentProgramObserver.swift in Sources */,
+				2C094D4E26F4629B003E20CE /* CurrentProgramChanger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
