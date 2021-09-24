@@ -29,12 +29,12 @@ class AudioController : ObservableObject, MetadataObserver, AudioPlayingStateObs
 
         self.reachability?.whenReachable = { reachability in
             self.connection = reachability.connection
-            
+
             if self.source != nil {
                 let quality = self.connection == Reachability.Connection.wifi ? StreamQuality.High : StreamQuality.Low
                 self.player.changeSource(url: self.source!.url.get(quality: quality))
             }
-            
+
         }
         self.reachability?.whenUnreachable = { _ in
             self.connection = nil

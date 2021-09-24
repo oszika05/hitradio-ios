@@ -5,6 +5,7 @@ struct NowPlayingPage: View {
     
     @EnvironmentObject private var metadataRepository: MetadataRepository
 //    @EnvironmentObject var radioPlayer: RadioPlayer
+    @EnvironmentObject private var audioState: AudioController
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
@@ -40,21 +41,17 @@ struct NowPlayingPage: View {
             .padding(.bottom, 24)
             .padding(.horizontal, 10)
             
-            Text(metadataRepository.songData?.song.title ?? "Podcast title")
+            Text(self.audioState.metadata?.title ?? "")
                 .font(.title)
-            
-            Text(metadataRepository.songData?.song.artist ?? "Podcast program")
+
+            Text(self.audioState.metadata?.subtitle ?? "")
                 .font(.body)
             
             Button(action: {
-//                if self.radioPlayer.isPlaying {
-//                    self.radioPlayer.stop()
-//                } else {
-//                    self.radioPlayer.play()
-//                }
+                self.audioState.playPause()
             }) {
 //                Text("aa")
-                Image(systemName: "stop.fill")
+                Image(systemName: self.audioState.isPlaying ? "stop.fill" : "play.fill")
                     .resizable()
                     .frame(width: 40, height: 40)
                     .padding()

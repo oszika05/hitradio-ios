@@ -11,6 +11,7 @@ struct NowPlayingBar<Content: View>: View {
     
 //    @EnvironmentObject private var radioPlayer: RadioPlayer
     @EnvironmentObject private var metadataRepository: MetadataRepository
+    @EnvironmentObject private var audioState: AudioController
     
     @State private var showMediaPlayer = false
     
@@ -19,7 +20,7 @@ struct NowPlayingBar<Content: View>: View {
         
         ZStack(alignment: .bottom) {
             VStack() {
-//                content.padding(.bottom, nowPlayingBarHeigth)
+                content.padding(.bottom, nowPlayingBarHeigth)
             }
             
             Button(action: {
@@ -55,13 +56,13 @@ struct NowPlayingBar<Content: View>: View {
                         
                         VStack(alignment: .leading) {
                             Text(
-                                self.metadataRepository.songData?.song.title ?? "Podcast title"
+                                self.audioState.metadata?.title ?? ""
                             )
                             .multilineTextAlignment(.leading)
                             .lineLimit(1)
                             
                             Text(
-                                self.metadataRepository.songData?.song.artist ?? "Podcast program"
+                                self.audioState.metadata?.subtitle ?? ""
                             )
                             .multilineTextAlignment(.leading)
                             .font(.caption)
@@ -73,15 +74,11 @@ struct NowPlayingBar<Content: View>: View {
                         
                         Button(action: {
                             print("play button pressed")
-//                            if (self.radioPlayer.isPlaying) {
-//                                self.radioPlayer.stop()
-//                            } else {
-//                                self.radioPlayer.play()
-//                            }
+                            self.audioState.playPause()
                         }) {
 //                            Text("aaa")
                             Image(
-                                systemName: "stop.fill"
+                                systemName: self.audioState.isPlaying ? "stop.fill" : "play.fill"
                             )
                             .resizable()
                             .scaledToFit()

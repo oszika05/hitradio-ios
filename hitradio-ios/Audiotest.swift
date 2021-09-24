@@ -3,7 +3,7 @@ import SwiftUI
 
 struct Audiotest: View {
     
-    @ObservedObject private var audioState = AudioController(player: AudioPlayer())
+    @EnvironmentObject private var audioState: AudioController
     @ObservedObject private var audiotestModel = AudiotestModel()
     
     var body: some View {
@@ -55,7 +55,10 @@ struct Audiotest: View {
 
 struct Audiotest_Previews: PreviewProvider {
     static var previews: some View {
+        let audioController = AudioController(player: AudioPlayer())
+        
         Audiotest()
+            .environmentObject(audioController)
     }
 }
 
