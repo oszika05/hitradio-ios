@@ -24,25 +24,22 @@ class SystemMetadataUpdater {
     }
 
     private func constructDurationInfo(
-        existingInfo: [String: Any],
         progress: Double,
         duration: Double
     ) -> [String: Any] {
-        var nowPlayingInfo = existingInfo
+        var nowPlayingInfo = [String: Any]()
 
         nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = progress
         nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = duration
         nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = 1.0
-        
+
         return nowPlayingInfo
     }
 
     private func constructMetadataInfo(
-        existingInfo: [String: Any],
         metadata: MetaData, image: UIImage?
     ) -> [String: Any] {
-        var nowPlayingInfo = existingInfo
-        nowPlayingInfo[MPMediaItemPropertyTitle] = "My Song"
+        var nowPlayingInfo = [String: Any]()
 
         nowPlayingInfo[MPNowPlayingInfoPropertyIsLiveStream] = metadata.isLive()
         nowPlayingInfo[MPMediaItemPropertyTitle] = metadata.title
@@ -53,11 +50,12 @@ class SystemMetadataUpdater {
             })
         }
 
-        if !metadata.isLive() {
-            nowPlayingInfo[MPMediaItemPropertyPodcastTitle] = metadata.title
-        }
-
         return nowPlayingInfo
+    }
+    
+    private func patchSystemMetadata(patch: [String: Any]) {
+        self.nowPlayingInfo.merge(patch) { (_, new) in new }
+        self.applyMetadataToSystem(nowPlayingInfo: self.nowPlayingInfo)
     }
 
     private func applyMetadataToSystem(nowPlayingInfo: [String: Any]) {
@@ -66,32 +64,26 @@ class SystemMetadataUpdater {
 
     func updateProgress(progress: Double, duration: Double) {
         let nowPlayingInfo = self.constructDurationInfo(
-            existingInfo: self.nowPlayingInfo,
             progress: progress,
             duration: duration
         )
-        self.nowPlayingInfo = nowPlayingInfo
-        self.applyMetadataToSystem(nowPlayingInfo: nowPlayingInfo)
+        self.patchSystemMetadata(patch: nowPlayingInfo)
     }
 
     func updateMetadata(metadata: MetaData) {
         let nowPlayingInfoWithDefaultImage = self.constructMetadataInfo(
-            existingInfo: self.nowPlayingInfo,
             metadata: metadata,
             image: nil
         )
-        self.applyMetadataToSystem(nowPlayingInfo: nowPlayingInfoWithDefaultImage)
-        self.nowPlayingInfo = nowPlayingInfoWithDefaultImage
+        self.patchSystemMetadata(patch: nowPlayingInfoWithDefaultImage)
 
         if metadata.artUri != nil {
             self.downloadImage(image: metadata.artUri!) { image in
                 let nowPlayingInfo = self.constructMetadataInfo(
-                    existingInfo: self.nowPlayingInfo,
                     metadata: metadata,
                     image: image
                 )
-                self.applyMetadataToSystem(nowPlayingInfo: nowPlayingInfo)
-                self.nowPlayingInfo = nowPlayingInfoWithDefaultImage
+                self.patchSystemMetadata(patch: nowPlayingInfo)
             }
         }
 
