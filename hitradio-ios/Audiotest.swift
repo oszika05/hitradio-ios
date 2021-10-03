@@ -21,7 +21,7 @@ struct Audiotest: View {
             Button(action: {
                 self.audioState.setSource(source: SimpleSource(
                     id: "2", name: "Podcast test", metadata: MetaData(
-                        title: "Podcast title", subtitle: "subtitle", artUri: nil, type: "simple"
+                        title: "Podcast title", subtitle: "subtitle", artUri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Patates.jpg/2560px-Patates.jpg", type: "simple"
                     ), url: SourceUrl(url: "https://www.kozco.com/tech/organfinale.mp3")
                 ))
             }) {

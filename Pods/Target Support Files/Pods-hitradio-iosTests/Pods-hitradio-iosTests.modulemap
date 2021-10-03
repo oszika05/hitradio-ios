@@ -1,0 +1,6 @@
+framework module Pods_hitradio_iosTests {
+  umbrella header "Pods-hitradio-iosTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

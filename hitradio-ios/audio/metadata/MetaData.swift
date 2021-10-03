@@ -13,4 +13,8 @@ class MetaData {
         self.type = type
         self.artUri = artUri
     }
+    
+    func isLive() -> Bool {
+        return self.type == "infinite"
+    }
 }

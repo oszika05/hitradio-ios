@@ -1,0 +1,6 @@
+framework module Pods_hitradio_ios {
+  umbrella header "Pods-hitradio-ios-umbrella.h"
+
+  export *
+  module * { export * }
+}
