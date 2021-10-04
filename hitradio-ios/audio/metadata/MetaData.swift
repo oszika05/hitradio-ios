@@ -17,4 +17,15 @@ class MetaData {
     func isLive() -> Bool {
         return self.type == "infinite"
     }
+    
+//    func artUriOrDefault() -> String {
+//        return self.artUri ?? "https://play-lh.googleusercontent.com/vObJFwtpVYL781TFLUhSnSWkVC-IVxhvCZtvQfBvA5sBGFTwgACLwMJy66PpLmnivnAF=s360"
+//    }
 }
+
+extension Optional where Wrapped: MetaData {
+    func artUriOrDefault() -> String {
+        return self?.artUri ?? "https://play-lh.googleusercontent.com/vObJFwtpVYL781TFLUhSnSWkVC-IVxhvCZtvQfBvA5sBGFTwgACLwMJy66PpLmnivnAF=s360"
+    }
+}
+

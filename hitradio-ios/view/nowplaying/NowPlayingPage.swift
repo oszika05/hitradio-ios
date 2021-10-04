@@ -28,7 +28,8 @@ struct NowPlayingPage: View {
                     .fill(Color(UIColor.systemBackground))
                     .shadow(radius: 10)
 
-                URLImage(url: URL(string: "https://play-lh.googleusercontent.com/vObJFwtpVYL781TFLUhSnSWkVC-IVxhvCZtvQfBvA5sBGFTwgACLwMJy66PpLmnivnAF=s360")!,
+                URLImage(
+                    url: URL(string: self.audioState.metadata.artUriOrDefault())!,
                     content: { image in
                         image
                             .resizable()
