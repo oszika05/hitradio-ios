@@ -23,7 +23,7 @@ class AudioPlayer {
             self.observer?.onIsPlayingChange(isPlaying: self.isPlaying)
             print("process: \(self.getCurrentProgress())")
             print("duration: \(self.getCurrentDuration())")
-            
+
         })
         player.delegate = delegate
         self.delegate = delegate
@@ -36,7 +36,7 @@ class AudioPlayer {
 //            if source == nil {
 //                return .commandFailed
 //            }
-            
+
             self.player.resume()
             return .success
         }
@@ -76,6 +76,11 @@ class AudioPlayer {
             return
         }
 
+        if self.player.state == STKAudioPlayerState.paused {
+            self.player.resume()
+            return
+        }
+
         self.player.play(self.source!)
     }
 
@@ -104,11 +109,15 @@ class AudioPlayer {
 
         self.player.stop()
     }
-    
+
+    func seekTo(position: Double) {
+        self.player.seek(toTime: position)
+    }
+
     func getCurrentDuration() -> Double {
         return self.player.duration
     }
-    
+
     func getCurrentProgress() -> Double {
         return self.player.progress
     }

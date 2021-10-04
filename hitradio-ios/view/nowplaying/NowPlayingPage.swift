@@ -59,6 +59,8 @@ struct NowPlayingPage: View {
             }
                 .buttonStyle(PlainButtonStyle())
                 .padding(.bottom, 16)
+            
+            SeekSlider()
 
             VolumeSlider()
                 .frame(height: 40)
