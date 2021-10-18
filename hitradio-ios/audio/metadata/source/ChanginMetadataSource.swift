@@ -34,7 +34,7 @@ class ChanginMetadataSource : Source, CurrentProgramObserver {
         }
     }
     
-    init(id: String, name: String, programApi: ProgramApi, url: SourceUrl) {
+    init(id: String, name: String, programApi: ProgramGuideApi, url: SourceUrl) {
         self._id = id
         self._name = name
         self._metadata = MetaData(title: name, subtitle: nil, artUri: nil, type: "infinite")
@@ -53,7 +53,7 @@ class ChanginMetadataSource : Source, CurrentProgramObserver {
         observer.onMetadataChanged(metadata: _metadata)
     }
     
-    func onCurrentProgramChange(currentProgram: Program?) {
+    func onCurrentProgramChange(currentProgram: ProgramGuideItem?) {
         self._metadata = MetaData(
             title: currentProgram?.title ?? "",
             subtitle: self._name,

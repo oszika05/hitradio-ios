@@ -5,7 +5,6 @@ import Combine
 
 class AudioController: ObservableObject, MetadataObserver, AudioPlayingStateObserver {
     // TODO:
-    // get playing state, length and seek point from player
     // test
 
     @Published private(set) var isPlaying: Bool = false
