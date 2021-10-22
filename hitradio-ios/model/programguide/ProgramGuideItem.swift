@@ -38,6 +38,17 @@ class ProgramGuideItem: Codable {
         return ProgramGuideItem(from: self, start: start, end: end)
     }
     
+    static func defaultProgram() -> ProgramGuideItem {
+        return ProgramGuideItem(
+            id: "default",
+            title: "Zene",
+            start: Date(),
+            end:  Date(),
+            description: "A legjobb keresztény zenék",
+            replay: ""
+        )
+    }
+    
     enum CodingKeys : String, CodingKey {
         case id = "show_id"
         case title = "show_title"

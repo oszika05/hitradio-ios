@@ -25,7 +25,21 @@ class MetaData {
 
 extension Optional where Wrapped: MetaData {
     func artUriOrDefault() -> String {
-        return self?.artUri ?? "https://play-lh.googleusercontent.com/vObJFwtpVYL781TFLUhSnSWkVC-IVxhvCZtvQfBvA5sBGFTwgACLwMJy66PpLmnivnAF=s360"
+        if self?.artUri == nil || self?.artUri == "" {
+            return "https://play-lh.googleusercontent.com/vObJFwtpVYL781TFLUhSnSWkVC-IVxhvCZtvQfBvA5sBGFTwgACLwMJy66PpLmnivnAF=s360"
+        }
+        
+        return self!.artUri!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+    }
+}
+
+extension MetaData {
+    func artUriOrDefault() -> String {
+        if self.artUri == nil || self.artUri == "" {
+            return "https://play-lh.googleusercontent.com/vObJFwtpVYL781TFLUhSnSWkVC-IVxhvCZtvQfBvA5sBGFTwgACLwMJy66PpLmnivnAF=s360"
+        }
+        
+        return self.artUri!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
     }
 }
 

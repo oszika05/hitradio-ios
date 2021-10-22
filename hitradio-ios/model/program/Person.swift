@@ -8,7 +8,11 @@
 import Foundation
 
 
-class Person: Codable {
+class Person: Codable, Equatable {
+    static func == (lhs: Person, rhs: Person) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     let id: String
     let name: String
     let type: PersonType
@@ -24,7 +28,7 @@ class Person: Codable {
     }
 }
 
-enum PersonType: Codable {
-    case Host
-    case Guest
+enum PersonType: String, Codable {
+    case Host = "host"
+    case Guest = "guest"
 }

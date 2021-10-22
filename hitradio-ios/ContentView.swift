@@ -1,9 +1,37 @@
 import SwiftUI
+import SwiftUIRouter
 
 struct ContentView: View {
     var body: some View {
-//        NowPlayingBar(content: Audiotest())
-        NowPlayingBar(content: NewsPage())
+        
+        TabView {
+            NowPlayingBar(content: NavigationView {
+                HomePage()
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+            })
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            
+            NowPlayingBar(content: NavigationView {
+                LivePage()
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+            })
+                .tabItem {
+                    Label("Live", systemImage: "dot.radiowaves.left.and.right")
+                }
+            
+            NowPlayingBar(content: NavigationView {
+                DiscoverPage()
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+            })
+                .tabItem {
+                    Label("Discover", systemImage: "magnifyingglass")
+                }
+        }
     }
 }
 

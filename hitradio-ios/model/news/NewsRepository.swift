@@ -59,4 +59,11 @@ class NewsRepository {
                 .decode(type: [News].self, decoder: jsonDecoder)
         )
     }
+
+    func getNewsItem(id: String) -> AnyPublisher<News, Error> {
+        return URLSession.shared.dataTaskPublisher(for: self.generateUrl(path: "/news/\(id)", queryItems: []))
+            .map { $0.data }
+            .decode(type: News.self, decoder: jsonDecoder)
+            .eraseToAnyPublisher()
+    }
 }

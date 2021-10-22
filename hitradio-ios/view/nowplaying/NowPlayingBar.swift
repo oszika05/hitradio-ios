@@ -17,7 +17,7 @@ struct NowPlayingBar<Content: View>: View {
 
     @ViewBuilder
     var body: some View {
-
+        
         ZStack(alignment: .bottom) {
             VStack() {
                 content.padding(.bottom, nowPlayingBarHeigth)

@@ -14,6 +14,11 @@ class SystemMetadataUpdater {
     private var nowPlayingInfo: [String: Any] = [String: Any]()
 
     private func downloadImage(image: String, _ onDownloaded: @escaping (_: UIImage?) -> Void) {
+        if URL(string: image) == nil {
+            onDownloaded(nil)
+            return
+        }
+        
         let task = URLSession.shared.dataTask(with: URL(string: image)!) { (data, response, error) in
             let downloadedImage = UIImage(data: data!)
 
@@ -78,7 +83,7 @@ class SystemMetadataUpdater {
         self.patchSystemMetadata(patch: nowPlayingInfoWithDefaultImage)
 
         if metadata.artUri != nil {
-            self.downloadImage(image: metadata.artUri!) { image in
+            self.downloadImage(image: metadata.artUriOrDefault()) { image in
                 let nowPlayingInfo = self.constructMetadataInfo(
                     metadata: metadata,
                     image: image

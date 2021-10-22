@@ -7,7 +7,11 @@
 
 import Foundation
 
-class Episode: Codable {
+class Episode: Codable, Equatable {
+    static func == (lhs: Episode, rhs: Episode) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     let id: String
     let title: String
     let date: Date
@@ -40,5 +44,15 @@ class Episode: Codable {
         self.audioUrl = audioUrl
         self.hosts = hosts
         self.guests = guests
+    }
+}
+
+extension Episode {
+    func asSource() -> Source {
+        return SimpleSource(
+            id: "episode/\(self.id)",
+            name: self.title,
+            metadata: MetaData(title: self.title, subtitle: self.description, artUri: self.program.picture, type: "simple"),
+            url: SourceUrl(url: self.audioUrl))
     }
 }

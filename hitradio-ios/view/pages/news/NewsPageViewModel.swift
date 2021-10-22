@@ -8,11 +8,11 @@
 import Foundation
 import Combine
 
+
 class NewsPageViewModel: ObservableObject {
 
     @Published private(set) var page: Int = 1
     @Published var search = ""
-
 
     @Published private(set) var news: [News] = []
     @Published private(set) var isLoading: Bool = false

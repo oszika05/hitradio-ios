@@ -9,6 +9,14 @@ import Foundation
 import Combine
 
 class ProgramRepository {
+    
+    private let jsonDecoder = JSONDecoder()
+
+    init() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        jsonDecoder.dateDecodingStrategy = .formatted(formatter)
+    }
 
     private func generateUrl(path: String, queryItems: [URLQueryItem]) -> URL {
         var components = URLComponents()
@@ -25,7 +33,7 @@ class ProgramRepository {
         return AnyPublisher(
             URLSession.shared.dataTaskPublisher(for: self.generateUrl(path: "/program/\(id)", queryItems: []))
                 .tryMap { $0.data }
-                .decode(type: Program.self, decoder: JSONDecoder())
+                .decode(type: Program.self, decoder: jsonDecoder)
         )
     }
 
@@ -42,7 +50,7 @@ class ProgramRepository {
         return AnyPublisher(
             URLSession.shared.dataTaskPublisher(for: self.generateUrl(path: "/program", queryItems: queryItems))
                 .tryMap { $0.data }
-                .decode(type: [Program].self, decoder: JSONDecoder())
+                .decode(type: [Program].self, decoder: jsonDecoder)
         )
     }
 
@@ -73,7 +81,7 @@ class ProgramRepository {
         return AnyPublisher(
             URLSession.shared.dataTaskPublisher(for: self.generateUrl(path: "/episode", queryItems: queryItems))
                 .tryMap { $0.data }
-                .decode(type: [Episode].self, decoder: JSONDecoder())
+                .decode(type: [Episode].self, decoder: jsonDecoder)
         )
     }
 
@@ -88,13 +96,15 @@ class ProgramRepository {
         }
         
         if personType != nil {
-            queryItems.append(URLQueryItem(name: "search", value: "\(personType!)"))
+            queryItems.append(URLQueryItem(name: "type", value: "\(personType!.rawValue)"))
         }
+        
+        print("url: \(self.generateUrl(path: "/person", queryItems: queryItems))")
 
         return AnyPublisher(
             URLSession.shared.dataTaskPublisher(for: self.generateUrl(path: "/person", queryItems: queryItems))
                 .tryMap { $0.data }
-                .decode(type: [Person].self, decoder: JSONDecoder())
+                .decode(type: [Person].self, decoder: jsonDecoder)
         )
     }
     
@@ -102,7 +112,7 @@ class ProgramRepository {
         return AnyPublisher(
             URLSession.shared.dataTaskPublisher(for: self.generateUrl(path: "/person/\(personId)/related", queryItems: []))
                 .tryMap { $0.data }
-                .decode(type: [Person].self, decoder: JSONDecoder())
+                .decode(type: [Person].self, decoder: jsonDecoder)
         )
     }
     
@@ -110,7 +120,7 @@ class ProgramRepository {
         return AnyPublisher(
             URLSession.shared.dataTaskPublisher(for: self.generateUrl(path: "/episode/\(episodeId)/related", queryItems: []))
                 .tryMap { $0.data }
-                .decode(type: [Episode].self, decoder: JSONDecoder())
+                .decode(type: [Episode].self, decoder: jsonDecoder)
         )
     }
 }

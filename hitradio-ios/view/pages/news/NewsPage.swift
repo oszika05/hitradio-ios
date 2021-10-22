@@ -1,5 +1,6 @@
 import SwiftUI
 import URLImage
+import SwiftUIRouter
 
 struct NewsPage: View {
 
@@ -15,17 +16,28 @@ struct NewsPage: View {
                     viewModel.news,
                     id: \.id
                 ) { item in
-                    Text(item.title).onAppear {
-                        if self.viewModel.news.last == item {
-                            self.viewModel.fetchNext()
+                    NavigationLink(destination: NewsItemPage(news: item)) {
+                        Text(item.title).onAppear {
+                            if self.viewModel.news.last == item {
+                                self.viewModel.fetchNext()
+                            }
                         }
                     }
+//                    NavLink(to: "/news/\(item.id)") {
+//                        Text(item.title).onAppear {
+//                            if self.viewModel.news.last == item {
+//                                self.viewModel.fetchNext()
+//                            }
+//                        }
+//                    }
                 }
                 
                 if viewModel.isLoading {
                     ProgressView()
                 }
             }
+            
+            Spacer()
         }
     }
 }

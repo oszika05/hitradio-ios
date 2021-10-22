@@ -7,7 +7,11 @@
 
 import Foundation
 
-class Program: Codable {
+class Program: Codable, Equatable {
+    static func == (lhs: Program, rhs: Program) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     let id: String
     let name: String
     let picture: String

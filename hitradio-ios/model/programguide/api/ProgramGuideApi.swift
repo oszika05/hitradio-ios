@@ -8,7 +8,7 @@ class ProgramGuideApi {
     
     private let url: String
     
-    init(url: String) {
+    init(url: String = "https://www.hitradio.hu/api/musor_ios.php") {
         self.url = url
         
         let formatter = DateFormatter()
@@ -121,7 +121,7 @@ class ProgramGuideApi {
     
     func getProgramsPerDay() -> Promise<[Int: [ProgramGuideItem]]> {
         let programsRequest = self.getPrograms()
-        
+
         return programsRequest
             .map { programs in
                 var newProgramsPerDay: [Int: [ProgramGuideItem]] = [0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: []]

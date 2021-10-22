@@ -36,6 +36,10 @@ class AudioController: ObservableObject, MetadataObserver, AudioPlayingStateObse
     @Published private var seekPositionManager: SeekPositionManager
 
     private var source: Source?
+    
+    func getSource() -> Source? {
+        return source
+    }
 
 
     init(player: AudioPlayer) {
