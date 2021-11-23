@@ -81,4 +81,13 @@ extension Color {
             dark: Color(hex: 0xFFF1F1F1)
         )
     }
+    
+    static var transparentColor: Self {
+        Self(
+            light: Color(hex: 0x00000000),
+            dark: Color(hex: 0x00000000)
+        )
+    }
+    
+    
 }

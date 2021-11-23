@@ -11,8 +11,8 @@ import URLImage
 struct SmallCard: View {
     
     enum BackgroundVariant {
-        case White
-        case Grey
+        case white
+        case grey
     }
     
     var title: String
@@ -21,18 +21,18 @@ struct SmallCard: View {
     var playbackState: PlaybackState? = nil
     var onClick: () -> Void = {}
     var onPlayPauseClick: () -> Void = {}
-    var backgroundVariant: BackgroundVariant = .White
+    var backgroundVariant: BackgroundVariant = .white
     
     
     var body: some View {
         Button(action: { onClick() }) {
             ZStack {
                 
-                let cardColor = backgroundVariant == .White ? Color.whiteColor : Color.greyColor
+                let cardColor = backgroundVariant == .white ? Color.whiteColor : Color.greyColor
                 
                 RoundedRectangle(cornerRadius: 8, style: .continuous)
                     .foregroundColor(cardColor)
-                    .boxShadow(enabled: backgroundVariant == .White)
+                    .boxShadow(enabled: backgroundVariant == .white)
                 
                 HStack(alignment: .top, spacing: 0.0) {
                     ZStack {
@@ -133,7 +133,7 @@ struct SmallCard_Previews: PreviewProvider {
             subtitle: "Kozeppont",
             picture: "https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bananas-218094b-scaled.jpg?quality=90&resize=960%2C872",
             playbackState: .Buffering,
-            backgroundVariant: .Grey
+            backgroundVariant: .grey
         )
     }
 }
