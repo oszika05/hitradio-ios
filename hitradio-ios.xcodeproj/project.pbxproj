@@ -43,6 +43,12 @@
 		2C5E7DAD2721A46C00EBB69E /* DiscoverPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E7DAC2721A46C00EBB69E /* DiscoverPage.swift */; };
 		2C5E7DAF2721A47F00EBB69E /* DiscoverPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E7DAE2721A47F00EBB69E /* DiscoverPageViewModel.swift */; };
 		2C7599C32709CD3600C9801E /* SystemMetadataUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7599C22709CD3600C9801E /* SystemMetadataUpdater.swift */; };
+		2C7FCC06274C309B00E10294 /* SmallCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7FCC05274C309B00E10294 /* SmallCard.swift */; };
+		2C87D89B274BF70900F878BD /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C87D89A274BF70900F878BD /* Theme.swift */; };
+		2C87D89E274BFDB400F878BD /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C87D89D274BFDB400F878BD /* Card.swift */; };
+		2C87D8A1274C052000F878BD /* PlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C87D8A0274C052000F878BD /* PlayPauseButton.swift */; };
+		2C87D8A4274C1B9600F878BD /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C87D8A3274C1B9500F878BD /* Shadow.swift */; };
+		2C87D8A6274C1F6300F878BD /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C87D8A5274C1F6300F878BD /* Image.swift */; };
 		2C8C6470270B0A63000D187A /* SeekSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C646F270B0A63000D187A /* SeekSlider.swift */; };
 		2C8C6473270B0E28000D187A /* NetworkObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C6472270B0E28000D187A /* NetworkObserver.swift */; };
 		2C8C6475270B1379000D187A /* SeekPositionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C6474270B1379000D187A /* SeekPositionManager.swift */; };
@@ -142,6 +148,12 @@
 		2C5E7DAC2721A46C00EBB69E /* DiscoverPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverPage.swift; sourceTree = "<group>"; };
 		2C5E7DAE2721A47F00EBB69E /* DiscoverPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverPageViewModel.swift; sourceTree = "<group>"; };
 		2C7599C22709CD3600C9801E /* SystemMetadataUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMetadataUpdater.swift; sourceTree = "<group>"; };
+		2C7FCC05274C309B00E10294 /* SmallCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCard.swift; sourceTree = "<group>"; };
+		2C87D89A274BF70900F878BD /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		2C87D89D274BFDB400F878BD /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		2C87D8A0274C052000F878BD /* PlayPauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPauseButton.swift; sourceTree = "<group>"; };
+		2C87D8A3274C1B9500F878BD /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		2C87D8A5274C1F6300F878BD /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		2C8C646F270B0A63000D187A /* SeekSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekSlider.swift; sourceTree = "<group>"; };
 		2C8C6472270B0E28000D187A /* NetworkObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkObserver.swift; sourceTree = "<group>"; };
 		2C8C6474270B1379000D187A /* SeekPositionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeekPositionManager.swift; sourceTree = "<group>"; };
@@ -297,6 +309,8 @@
 		2C094D2726F0F6AE003E20CE /* view */ = {
 			isa = PBXGroup;
 			children = (
+				2C87D899274BF6F500F878BD /* layout */,
+				2C87D898274BF6E900F878BD /* components */,
 				2CB4CC052718D87700BDE6F4 /* pages */,
 				2CD5A81426FD18710045D7ED /* common */,
 				2C094D3526F0F85E003E20CE /* nowplaying */,
@@ -419,6 +433,49 @@
 				2C094D5926F46314003E20CE /* PodcastApi.swift */,
 			);
 			path = api;
+			sourceTree = "<group>";
+		};
+		2C87D898274BF6E900F878BD /* components */ = {
+			isa = PBXGroup;
+			children = (
+				2C87D8A2274C1B7E00F878BD /* shadow */,
+				2C87D89F274C051200F878BD /* playpausebutton */,
+				2C87D89C274BFD9700F878BD /* card */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		2C87D899274BF6F500F878BD /* layout */ = {
+			isa = PBXGroup;
+			children = (
+				2C87D89A274BF70900F878BD /* Theme.swift */,
+			);
+			path = layout;
+			sourceTree = "<group>";
+		};
+		2C87D89C274BFD9700F878BD /* card */ = {
+			isa = PBXGroup;
+			children = (
+				2C87D89D274BFDB400F878BD /* Card.swift */,
+				2C7FCC05274C309B00E10294 /* SmallCard.swift */,
+			);
+			path = card;
+			sourceTree = "<group>";
+		};
+		2C87D89F274C051200F878BD /* playpausebutton */ = {
+			isa = PBXGroup;
+			children = (
+				2C87D8A0274C052000F878BD /* PlayPauseButton.swift */,
+			);
+			path = playpausebutton;
+			sourceTree = "<group>";
+		};
+		2C87D8A2274C1B7E00F878BD /* shadow */ = {
+			isa = PBXGroup;
+			children = (
+				2C87D8A3274C1B9500F878BD /* Shadow.swift */,
+			);
+			path = shadow;
 			sourceTree = "<group>";
 		};
 		2C8C6471270B0DA5000D187A /* controller */ = {
@@ -582,6 +639,7 @@
 				2CD5A81926FD18870045D7ED /* HTMLView.swift */,
 				2CD5A81726FD18800045D7ED /* SearchBar.swift */,
 				2CD5A81526FD18790045D7ED /* Blur.swift */,
+				2C87D8A5274C1F6300F878BD /* Image.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -909,13 +967,16 @@
 				2CEDA1F5272233A600CAD2BC /* EpisodesPage.swift in Sources */,
 				2CEDA1FF2722405600CAD2BC /* ProgramsPageViewModel.swift in Sources */,
 				2CEDA2072722439500CAD2BC /* PeoplePageViewModel.swift in Sources */,
+				2C87D8A6274C1F6300F878BD /* Image.swift in Sources */,
 				2C094D6226F463C7003E20CE /* NowPlayingBar.swift in Sources */,
 				2C094D6326F463C7003E20CE /* VolumeSlider.swift in Sources */,
 				2C973D98270C83A500156E13 /* NewsRepository.swift in Sources */,
+				2C87D89E274BFDB400F878BD /* Card.swift in Sources */,
 				2C094D4B26F4628F003E20CE /* ProgramsResult.swift in Sources */,
 				2C094D5726F462E1003E20CE /* PodcastItem.swift in Sources */,
 				2C8C6470270B0A63000D187A /* SeekSlider.swift in Sources */,
 				2CEDA1FD2722404900CAD2BC /* ProgramsPage.swift in Sources */,
+				2C7FCC06274C309B00E10294 /* SmallCard.swift in Sources */,
 				2CD5A81326FD18440045D7ED /* MetadataRepository.swift in Sources */,
 				2C094D5326F462B1003E20CE /* ProgramGuideItem.swift in Sources */,
 				2C094D3826F46225003E20CE /* SourceUrl.swift in Sources */,
@@ -935,6 +996,7 @@
 				2C094D3E26F46237003E20CE /* Source.swift in Sources */,
 				2CD5A81826FD18800045D7ED /* SearchBar.swift in Sources */,
 				2C094D5E26F46399003E20CE /* AudiotestModel.swift in Sources */,
+				2C87D8A4274C1B9600F878BD /* Shadow.swift in Sources */,
 				2CEDA1F92722372800CAD2BC /* EpisodePage.swift in Sources */,
 				2CEDA2032722423B00CAD2BC /* ProgramPageViewModel.swift in Sources */,
 				2CD5A81D26FD1C950045D7ED /* Song.swift in Sources */,
@@ -943,10 +1005,12 @@
 				2CD5A81E26FD1C950045D7ED /* SongEvent.swift in Sources */,
 				2C5E7DAA27219C1400EBB69E /* LivePageViewModel.swift in Sources */,
 				2CE5F3132715B8820046DC45 /* Episode.swift in Sources */,
+				2C87D8A1274C052000F878BD /* PlayPauseButton.swift in Sources */,
 				2CE5F3182715BAFD0046DC45 /* ProgramRepository.swift in Sources */,
 				2C5E7DAD2721A46C00EBB69E /* DiscoverPage.swift in Sources */,
 				2CEDA1F7272233B400CAD2BC /* EpisodesPageViewModel.swift in Sources */,
 				2C094D5A26F46314003E20CE /* PodcastApi.swift in Sources */,
+				2C87D89B274BF70900F878BD /* Theme.swift in Sources */,
 				2CEDA1F127222C3800CAD2BC /* NewsItemPage.swift in Sources */,
 				2CEDA1F327222C5E00CAD2BC /* NewsItemPageViewModel.swift in Sources */,
 				2C094D3926F46225003E20CE /* StreamQuality.swift in Sources */,

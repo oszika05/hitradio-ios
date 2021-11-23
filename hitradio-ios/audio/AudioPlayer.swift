@@ -9,8 +9,7 @@ class AudioPlayer {
 
     private(set) var source: String? = nil
 
-    private(set) var isPlaying: Bool = false
-    private(set) var isBuffering: Bool = false
+    private(set) var playbackState: PlaybackState = PlaybackState.Stopped
 
     private var delegate: Delegate? = nil
 
@@ -18,12 +17,8 @@ class AudioPlayer {
 
     init() {
         let delegate = Delegate(onChange: { state in
-            print("state changed: \(state) \(self.checkIsPlaying(state: state))")
-            self.isPlaying = self.checkIsPlaying(state: state)
-            self.observer?.onIsPlayingChange(isPlaying: self.isPlaying)
-            print("process: \(self.getCurrentProgress())")
-            print("duration: \(self.getCurrentDuration())")
-
+            self.playbackState = PlaybackState.from(playerState: state)
+            self.observer?.onIsPlayingChange(state: self.playbackState)
         })
         player.delegate = delegate
         self.delegate = delegate
@@ -72,7 +67,7 @@ class AudioPlayer {
             return
         }
 
-        if self.isPlaying || self.isBuffering {
+        if self.playbackState == PlaybackState.Stopped || self.playbackState == PlaybackState.Buffering {
             return
         }
 
@@ -90,7 +85,7 @@ class AudioPlayer {
         }
 
         // TODO what about buffering
-        if !self.isPlaying {
+        if self.playbackState == PlaybackState.Stopped {
             return
         }
 
@@ -102,8 +97,7 @@ class AudioPlayer {
             return
         }
 
-        // TODO what about buffering
-        if !self.isPlaying {
+        if self.playbackState == PlaybackState.Stopped {
             return
         }
 

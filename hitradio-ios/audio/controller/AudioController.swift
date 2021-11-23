@@ -7,7 +7,7 @@ class AudioController: ObservableObject, MetadataObserver, AudioPlayingStateObse
     // TODO:
     // test
 
-    @Published private(set) var isPlaying: Bool = false
+    @Published private(set) var playbackState: PlaybackState = PlaybackState.Stopped
     @Published private(set) var metadata: MetaData? = nil
 
     var anyCancellable: AnyCancellable? = nil
@@ -67,9 +67,8 @@ class AudioController: ObservableObject, MetadataObserver, AudioPlayingStateObse
         self.player.removeObserver()
     }
 
-    func onIsPlayingChange(isPlaying: Bool) {
-        self.isPlaying = isPlaying
-
+    func onIsPlayingChange(state: PlaybackState) {
+        self.playbackState = state
 
         self.systemMetadataUpdater.updateProgress(
             progress: self.player.getCurrentProgress(),
@@ -99,7 +98,7 @@ class AudioController: ObservableObject, MetadataObserver, AudioPlayingStateObse
     }
 
     func playPause() {
-        if self.player.isPlaying {
+        if self.player.playbackState != .Stopped {
             self.player.pause()
         } else {
             self.player.play()

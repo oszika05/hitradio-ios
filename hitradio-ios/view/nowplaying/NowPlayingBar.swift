@@ -79,7 +79,7 @@ struct NowPlayingBar<Content: View>: View {
                         }) {
 //                            Text("aaa")
                             Image(
-                                systemName: self.audioState.isPlaying ? "stop.fill" : "play.fill"
+                                systemName: (self.audioState.playbackState != .Stopped) ? "stop.fill" : "play.fill"
                             )
                                 .resizable()
                                 .scaledToFit()

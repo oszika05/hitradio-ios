@@ -13,7 +13,7 @@ struct LivePage: View {
     
     var body: some View {
         let isCurrentSource = audioController.getSource()?.id == viewModel.liveSource.id
-        let isPlaying = isCurrentSource && audioController.isPlaying
+        let isPlaying = isCurrentSource && (audioController.playbackState != .Stopped)
         
         VStack {
             Text(viewModel.currentProgram?.title ?? "")

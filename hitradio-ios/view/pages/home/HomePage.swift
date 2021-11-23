@@ -14,6 +14,20 @@ struct HomePage: View {
     var body: some View {
         ScrollView {
             VStack {
+                ZStack {
+                    Card(
+                        title: "This is a test",
+                        picture: "https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bananas-218094b-scaled.jpg?quality=90&resize=960%2C872",
+                        playbackState: .Stopped,
+                        onClick: {
+                            print("onClick")
+                        },
+                        onPlayPauseClick: {
+                            print("onPlayPauseClick")
+                        }
+                    )
+                }.padding(16.0)
+                
                 NavigationLink(destination: SettingsPage()) {
                     Text("settings")
                 }

@@ -52,7 +52,7 @@ struct NowPlayingPage: View {
                 self.audioState.playPause()
             }) {
 //                Text("aa")
-                Image(systemName: self.audioState.isPlaying ? "stop.fill" : "play.fill")
+                Image(systemName: (self.audioState.playbackState != .Stopped) ? "stop.fill" : "play.fill")
                     .resizable()
                     .frame(width: 40, height: 40)
                     .padding()

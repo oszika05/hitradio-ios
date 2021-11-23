@@ -37,7 +37,7 @@ struct Audiotest: View {
             Button(action: {
                 self.audioState.playPause()
             }) {
-                Text(self.audioState.isPlaying ? "Stop" : "Play")
+                Text((self.audioState.playbackState != .Stopped) ? "Stop" : "Play")
             }
             
             Text(self.audioState.metadata?.title ?? "no metadata")

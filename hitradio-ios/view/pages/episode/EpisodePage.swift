@@ -25,7 +25,9 @@ struct EpisodePage: View {
                 Text("\(viewModel.episode.title)")
                 
                 let isCurrentSource = audioController.getSource() != nil && audioController.getSource()?.id == viewModel.episode.asSource().id
-                let isPlaying = isCurrentSource && audioController.isPlaying
+                // TODO playbackState
+                let isPlaying = isCurrentSource && audioController.playbackState != .Stopped
+                
                 
                 Button(action: {
                     if !isCurrentSource {
